@@ -1,99 +1,181 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Cafeteria Delícia</title>
-  <link rel="stylesheet" href="style3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Aroma — Sua Cafeteria Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #2e221f;
+      --card: #3c2e2a;
+      --text: #f3f0ed;
+      --muted: #cfc7c3;
+      --accent: #d4a373;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92%); margin: auto; }
+    header {
+      background: rgba(44,34,30,.9);
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .logo {
+      font-weight: 700; font-size: 1.4rem;
+      color: var(--accent);
+    }
+    .btn {
+      background: var(--accent); color: #fff; border: none;
+      padding: .7rem 1.2rem; border-radius: 999px;
+      cursor: pointer; font-weight: 600;
+      transition: .2s;
+    }
+    .btn:hover { opacity: .9; transform: translateY(-1px); }
+    /* Hero */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      align-items: center; padding: 2.5rem 0;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); max-width: 45ch; }
+    .hero img { border-radius: var(--radius); box-shadow: var(--shadow); }
+    /* Produtos */
+    section { padding: 2rem 0; }
+    .section-title { margin-bottom: 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column;
+    }
+    .card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+    .card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .price { font-weight: 700; color: var(--accent); margin-top: .5rem; }
+    /* Depoimentos */
+    .testi { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); }
+    .testi .item { background: var(--card); padding: 1rem; border-radius: var(--radius); box-shadow: var(--shadow); }
+    /* Newsletter */
+    .newsletter { background: var(--card); padding: 1.5rem; border-radius: var(--radius); text-align: center; }
+    .newsletter input { padding: .6rem 1rem; border-radius: 999px; border: none; margin-right: .5rem; width: 60%; max-width: 300px; }
+    /* Footer */
+    footer { border-top: 1px solid #4a3b36; margin-top: 2rem; padding: 1rem 0; text-align: center; color: var(--muted); font-size: .9rem; }
+    @media(max-width: 720px){ .hero{ grid-template-columns: 1fr; text-align: center; } }
+  </style>
 </head>
 <body>
-
   <header>
-    <div class="overlay">
-      <h1>Cafeteria Delícia</h1>
+    <div class="container nav">
+      <div class="logo">☕ Café Aroma</div>
       <nav>
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#cardapio">Cardápio</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre" style="margin-left:1rem">Sobre</a>
       </nav>
+      <button class="btn">Peça agora</button>
     </div>
   </header>
 
-  <section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>
-      A Cafeteria Delícia é um espaço sofisticado para apreciadores de café e boa gastronomia. 
-      Nosso ambiente elegante une tradição e modernidade, proporcionando experiências únicas. 
-      Cada bebida é preparada com grãos selecionados e muito carinho para nossos clientes.
-    </p>
-  </section>
-
-  <section id="cardapio">
-    <h2>Nosso Cardápio</h2>
-    <div class="itens-cardapio">
-
-      <div class="item">
-        <h3>Café Expresso</h3>
-        <p>Clássico, forte e encorpado.</p>
-        <span>R$ 5,00</span>
+  <main>
+    <!-- HERO -->
+    <section class="container hero">
+      <div>
+        <h1>O sabor que desperta seus sentidos</h1>
+        <p>Cafés especiais, grãos selecionados e bebidas artesanais. Experimente o verdadeiro aroma do café em cada xícara.</p>
+        <button class="btn" style="margin-top:1rem">Explorar menu</button>
       </div>
-
-      <div class="item">
-        <h3>Cappuccino</h3>
-        <p>Equilíbrio perfeito entre café, leite e espuma cremosa.</p>
-        <span>R$ 8,00</span>
+      <div>
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop" alt="Xícara de café com espuma artística">
       </div>
+    </section>
 
-      <div class="item">
-        <h3>Brownie de Chocolate</h3>
-        <p>Delicioso, artesanal e macio.</p>
-        <span>R$ 6,50</span>
+    <!-- PRODUTOS -->
+    <section class="container" id="produtos">
+      <h2 class="section-title">Nossos cafés mais pedidos</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1523942839745-7848d4f1d397?q=80&w=600&auto=format&fit=crop" alt="Café expresso">
+          <div class="card-body">
+            <div>
+              <h3>Expresso Clássico</h3>
+              <p>O café na sua forma mais pura, intenso e encorpado.</p>
+            </div>
+            <span class="price">R$ 7,00</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1587731592099-3e8e3f9d8f9f?q=80&w=600&auto=format&fit=crop" alt="Café cappuccino">
+          <div class="card-body">
+            <div>
+              <h3>Cappuccino Cremoso</h3>
+              <p>Equilíbrio perfeito entre café, leite vaporizado e espuma.</p>
+            </div>
+            <span class="price">R$ 12,00</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop" alt="Latte com arte">
+          <div class="card-body">
+            <div>
+              <h3>Latte Artístico</h3>
+              <p>Café suave com leite e arte no topo para encantar seu dia.</p>
+            </div>
+            <span class="price">R$ 14,00</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="item">
-        <h3>Croissant</h3>
-        <p>Folhado amanteigado, perfeito para acompanhar o café.</p>
-        <span>R$ 7,00</span>
+    <!-- DEPOIMENTOS -->
+    <section class="container">
+      <h2 class="section-title">O que dizem nossos clientes</h2>
+      <div class="testi">
+        <div class="item">
+          <p>“O melhor cappuccino da cidade, cremoso e delicioso. Atendimento impecável!”</p>
+          <small>— Ana S.</small>
+        </div>
+        <div class="item">
+          <p>“O expresso tem um sabor único, dá energia para começar o dia.”</p>
+          <small>— João M.</small>
+        </div>
+        <div class="item">
+          <p>“Adoro o ambiente acolhedor e os cafés especiais. Recomendo a todos!”</p>
+          <small>— Beatriz F.</small>
+        </div>
       </div>
+    </section>
 
-      <div class="item">
-        <h3>Latte</h3>
-        <p>Suave e cremoso, ideal para qualquer hora do dia.</p>
-        <span>R$ 9,00</span>
+    <!-- NEWSLETTER -->
+    <section class="container">
+      <div class="newsletter">
+        <h2>Receba novidades e promoções</h2>
+        <form>
+          <input type="email" placeholder="Seu e-mail" required>
+          <button class="btn" type="submit">Cadastrar</button>
+        </form>
       </div>
-
-      <div class="item">
-        <h3>Cheesecake</h3>
-        <p>Cremoso e leve, com calda de frutas vermelhas.</p>
-        <span>R$ 12,00</span>
-      </div>
-
-      <div class="item">
-        <h3>Chá de Ervas</h3>
-        <p>Calmante e aromático, ideal para relaxar.</p>
-        <span>R$ 6,00</span>
-      </div>
-
-      <div class="item">
-        <h3>Sanduíche Gourmet</h3>
-        <p>Pão artesanal, queijo especial e recheio selecionado.</p>
-        <span>R$ 14,00</span>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Email: contato@cafeteriadelicia.com</p>
-    <p>Telefone: (11) 99999-9999</p>
-    <p>Endereço: Rua dos Sabores, 123 - São Paulo/SP</p>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Cafeteria Delícia - Todos os direitos reservados</p>
+    <p>© <span id="year"></span> Café Aroma — Todos os direitos reservados</p>
   </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
