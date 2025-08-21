@@ -1,0 +1,125 @@
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #1c1c1c, #2e2a28, #3e2723);
+  color: #f5e9d7;
+}
+
+/* Cabeçalho com imagem */
+header {
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') no-repeat center center/cover;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+header .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3.5em;
+  color: #c8a165;
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f5e9d7;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #c8a165;
+}
+
+/* Seções */
+section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+  color: #c8a165;
+  font-size: 2.2em;
+}
+
+p {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+/* Cardápio */
+.itens-cardapio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  width: 250px;
+  transition: transform 0.3s, background-color 0.3s;
+  text-align: center;
+  border: 1px solid #c8a165;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  background-color: rgba(200, 161, 101, 0.1);
+}
+
+.item h3 {
+  margin: 10px 0 10px;
+  color: #f5e9d7;
+  font-size: 1.3em;
+}
+
+.item p {
+  font-size: 0.95em;
+  color: #ddd;
+}
+
+.item span {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #c8a165;
+  font-size: 1.1em;
+}
+
+/* Rodapé */
+footer {
+  background-color: #1a0f0a;
+  text-align: center;
+  padding: 25px;
+  border-top: 2px solid #c8a165;
+  font-size: 0.9em;
+}
