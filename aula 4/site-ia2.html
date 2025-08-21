@@ -1,144 +1,208 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Élan Cosméticos</title>
-  <link rel="stylesheet" href="style4.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bella Beauty — Loja de Cosméticos</title>
+  <meta name="description" content="Loja fictícia de cosméticos — HTML, CSS e JS em um único arquivo." />
+  <style>
+    :root{
+      --bg:#fdf6f9;       /* fundo suave */
+      --panel:#fff;        /* cartões/painéis */
+      --soft:#e0dfea;      /* bordas/linhas */
+      --txt:#333;          /* texto principal */
+      --muted:#7a7a7a;     /* texto secundário */
+      --brand:#d291bc;     /* roxo */
+      --accent:#f9c1d9;    /* rosa */
+      --danger:#ff5c7a;    /* rosa avermelhado */
+      --ok:#20c997;        /* verde */
+      --shadow: 0 10px 30px rgba(0,0,0,.1);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color:var(--txt);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);}
+    .nav{
+      display:flex; align-items:center; gap:16px; justify-content:space-between;
+      padding:16px 0;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.5px}
+    .brand .logo{width:34px; height:34px; border-radius:12px; display:grid; place-items:center; color:white;
+      background: linear-gradient(135deg, var(--brand), var(--accent)); box-shadow: var(--shadow)}
+    .actions{display:flex; align-items:center; gap:10px}
+    .btn{border:none; border-radius:14px; padding:10px 14px; background:var(--panel); color:var(--txt); cursor:pointer;
+      transition: transform .06s ease, background .2s ease, opacity .2s ease; box-shadow: var(--shadow)}
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{background: linear-gradient(135deg, var(--brand), var(--accent)); color:white;}
+    .btn.ghost{background:transparent; border:1px solid var(--soft)}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:center; padding: 22px 0 10px}
+    .hero-card{background:linear-gradient(135deg, rgba(210,145,188,.2), rgba(249,193,217,.1)); border:1px solid rgba(0,0,0,.05);
+      border-radius:var(--radius); padding:28px; box-shadow:var(--shadow)}
+    .hero h1{margin:0 0 8px; font-size: clamp(28px, 3.5vw, 44px)}
+    .hero p{margin:0 0 16px; color:var(--muted)}
+    .hero .badges{display:flex; gap:8px; flex-wrap:wrap}
+    .badge{background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.08); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--txt)}
+
+    /* Toolbar */
+    .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:18px 0}
+    .search{flex:1; min-width:220px; display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--soft);
+      border-radius:14px; padding:10px 12px}
+    .search input{flex:1; background:transparent; border:none; outline:none; color:var(--txt)}
+    .filters{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{padding:8px 12px; border-radius:999px; background:rgba(0,0,0,.03); border:1px solid var(--soft); cursor:pointer; font-size:14px}
+    .chip.active{background:linear-gradient(135deg, rgba(210,145,188,.35), rgba(249,193,217,.25)); border-color:transparent}
+    .sort{background:var(--panel); border:1px solid var(--soft); border-radius:12px; padding:10px; color:var(--txt)}
+
+    /* Grid */
+    .grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:18px}
+    @media (max-width:1000px){ .hero{grid-template-columns: 1fr} .grid{grid-template-columns: repeat(3, 1fr);} }
+    @media (max-width:720px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width:480px){ .grid{grid-template-columns: 1fr;} }
+
+    .card{background:var(--panel); border:1px solid var(--soft); border-radius:18px; overflow:hidden; position:relative; display:flex; flex-direction:column; box-shadow: var(--shadow)}
+    .thumb{height:160px; background: linear-gradient(135deg, #f9c1d9, #d291bc); position:relative}
+    .thumb .label{position:absolute; top:10px; left:10px; font-size:12px; background:linear-gradient(135deg, #ff8f70, #ff3d81); padding:6px 8px; border-radius:8px; color:white;}
+    .content{padding:14px}
+    .title{font-weight:700; margin:0 0 6px}
+    .meta{display:flex; gap:8px; align-items:center; color:var(--muted); font-size:12px}
+    .price{display:flex; align-items:center; justify-content:space-between; padding:12px 14px 16px; gap:10px}
+    .price strong{font-size:18px}
+    .strike{color:#b9bade; text-decoration:line-through; margin-left:6px; font-weight:400}
+
+    .add{margin:0 14px 14px; display:flex; gap:10px}
+    .qty{display:flex; align-items:center; background:rgba(0,0,0,.03); border:1px solid var(--soft); border-radius:10px}
+    .qty button{all:unset; padding:8px 12px; cursor:pointer}
+    .qty input{all:unset; width:32px; text-align:center}
+
+    /* Cart (drawer) */
+    .cart{position:fixed; inset:0 0 0 auto; width:380px; background:var(--panel); border-left:1px solid var(--soft); transform: translateX(100%);
+      transition: transform .25s ease; z-index:60; display:flex; flex-direction:column}
+    .cart.open{transform: translateX(0)}
+    .cart header{position:unset; padding:16px; border-bottom:1px solid var(--soft)}
+    .cart h3{margin:0}
+    .cart .items{flex:1; overflow:auto; padding:10px}
+    .cart .item{display:grid; grid-template-columns: 56px 1fr auto; gap:10px; align-items:center; background:rgba(0,0,0,.03);
+      border:1px solid var(--soft); padding:8px; border-radius:12px; margin-bottom:10px}
+    .cart .thumb{height:56px}
+    .cart .name{font-size:14px; margin:0}
+    .cart .muted{color:var(--muted); font-size:12px}
+    .cart .remove{background:transparent; border:none; color:var(--danger); cursor:pointer}
+    .cart .footer{border-top:1px solid var(--soft); padding:14px; display:grid; gap:10px}
+
+    /* Toast */
+    .toast{position:fixed; right:16px; bottom:16px; background:rgba(30,34,70,.9); border:1px solid var(--soft); padding:10px 12px; border-radius:12px;
+      opacity:0; transform: translateY(10px); transition: all .25s ease; z-index:70}
+    .toast.show{opacity:1; transform: translateY(0)}
+
+    footer{margin:30px 0 60px; color:var(--muted); text-align:center}
+  </style>
 </head>
 <body>
-
-  <!-- Cabeçalho -->
   <header>
-    <div class="navbar">
-      <h1>Élan</h1>
-      <nav>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#beneficios">Benefícios</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <span class="logo">💄</span>
+        <span>Bella Beauty</span>
+      </a>
+      <div class="actions">
+        <button class="btn ghost" id="btn-theme" title="Alternar tema">🌓</button>
+        <button class="btn" id="btn-cart" title="Carrinho">🛒 <span id="cart-count" style="margin-left:6px">0</span></button>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h2>Beleza que Inspira Confiança</h2>
-        <p>Cosméticos premium para realçar sua elegância natural</p>
-        <a href="#produtos" class="btn">Descubra Agora</a>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Realce sua beleza</h1>
+        <p>Maquiagens, cuidados com a pele e acessórios com até <strong>50% OFF</strong> em promoções semanais.</p>
+        <div class="badges">
+          <span class="badge">💳 10x sem juros</span>
+          <span class="badge">⚡ Entrega rápida</span>
+          <span class="badge">🔒 Compra segura</span>
+        </div>
       </div>
-    </div>
-  </section>
+      <div class="hero-card" style="display:grid; place-items:center; min-height:160px">
+        <div style="text-align:center">
+          <div style="font-size:22px; font-weight:700; margin-bottom:6px">Cupom de Boas‑Vindas</div>
+          <div style="font-size:16px; color:var(--muted); margin-bottom:12px">USE O CÓDIGO <b>BELLA10</b> na primeira compra</div>
+          <button class="btn primary" onclick="copyCoupon()">Copiar CUPOM</button>
+        </div>
+      </div>
+    </section>
 
-  <!-- Produtos -->
-  <section id="produtos">
-    <h2>Produtos Exclusivos</h2>
-    <div class="produtos-container">
-      <div class="produto-card">
-        <img src="https://images.unsplash.com/photo-1600180758895-8c68f18c1651?crop=entropy&cs=tinysrgb&h=200" alt="Base Premium">
-        <h3>Base Premium</h3>
-        <p>Acabamento impecável e longa duração para todos os tons de pele.</p>
-        <span>R$ 149,00</span>
+    <!-- Toolbar -->
+    <section class="toolbar">
+      <div class="search">
+        <span>🔎</span>
+        <input id="search" placeholder="Buscar produtos (ex.: batom, base, blush)" />
       </div>
-      <div class="produto-card">
-        <img src="https://images.unsplash.com/photo-1618354691038-21a4d2f81d95?crop=entropy&cs=tinysrgb&h=200" alt="Batom Luxo">
-        <h3>Batom Luxo</h3>
-        <p>Textura cremosa e cores intensas que duram o dia todo.</p>
-        <span>R$ 69,00</span>
+      <div class="filters">
+        <button class="chip active" data-filter="all">Todos</button>
+        <button class="chip" data-filter="maquiagem">Maquiagem</button>
+        <button class="chip" data-filter="pele">Cuidados com a pele</button>
+        <button class="chip" data-filter="acessorio">Acessórios</button>
       </div>
-      <div class="produto-card">
-        <img src="https://images.unsplash.com/photo-1595621326982-7a2eb11f7f24?crop=entropy&cs=tinysrgb&h=200" alt="Paleta Deluxe">
-        <h3>Paleta Deluxe</h3>
-        <p>12 cores sofisticadas e altamente pigmentadas.</p>
-        <span>R$ 199,00</span>
-      </div>
-      <div class="produto-card">
-        <img src="https://images.unsplash.com/photo-1612821455542-0d02691f1d6d?crop=entropy&cs=tinysrgb&h=200" alt="Máscara Premium">
-        <h3>Máscara Premium</h3>
-        <p>Volume extremo e definição perfeita para todos os estilos.</p>
-        <span>R$ 89,00</span>
-      </div>
-      <div class="produto-card">
-        <img src="https://images.unsplash.com/photo-1612883662855-1db0df3b52a0?crop=entropy&cs=tinysrgb&h=200" alt="Iluminador Glow">
-        <h3>Iluminador Glow</h3>
-        <p>Brilho sofisticado para um acabamento radiante.</p>
-        <span>R$ 75,00</span>
-      </div>
-      <div class="produto-card">
-        <img src="https://images.unsplash.com/photo-1613091967832-92dbe9df7a2d?crop=entropy&cs=tinysrgb&h=200" alt="Blush Seduction">
-        <h3>Blush Seduction</h3>
-        <p>Cores intensas que realçam seu rosto naturalmente.</p>
-        <span>R$ 65,00</span>
-      </div>
-    </div>
-  </section>
+      <select id="sort" class="sort">
+        <option value="featured">Ordenar: Destaques</option>
+        <option value="price-asc">Preço: menor → maior</option>
+        <option value="price-desc">Preço: maior → menor</option>
+      </select>
+    </section>
 
-  <!-- Benefícios -->
-  <section id="beneficios">
-    <h2>Por que Escolher Élan?</h2>
-    <div class="beneficios-container">
-      <div class="beneficio">
-        <img src="https://img.icons8.com/emoji/96/000000/seedling-emoji.png" alt="Natural">
-        <h3>Ingredientes Naturais</h3>
-        <p>Formulados com ativos selecionados e cruelty-free.</p>
-      </div>
-      <div class="beneficio">
-        <img src="https://img.icons8.com/emoji/96/000000/jewel-emoji.png" alt="Luxo">
-        <h3>Luxo e Sofisticação</h3>
-        <p>Embalagens premium e design elegante.</p>
-      </div>
-      <div class="beneficio">
-        <img src="https://img.icons8.com/emoji/96/000000/high-voltage-emoji.png" alt="Performance">
-        <h3>Alta Performance</h3>
-        <p>Produtos duradouros e de alta pigmentação.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Grid de Produtos -->
+    <section id="grid" class="grid"></section>
+  </main>
 
-  <!-- Depoimentos -->
-  <section id="depoimentos">
-    <h2>O que Nossos Clientes Dizem</h2>
-    <div class="depoimentos-container">
-      <div class="depoimento">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 1">
-        <p>"A base premium é incrível! Minha pele nunca esteve tão perfeita."</p>
-        <span>- Mariana S.</span>
+  <!-- Carrinho (Drawer) -->
+  <aside id="cart" class="cart" aria-hidden="true">
+    <header class="nav" style="padding:14px 16px">
+      <h3>Carrinho</h3>
+      <button class="btn ghost" id="close-cart">Fechar ✖</button>
+    </header>
+    <div class="items" id="cart-items"></div>
+    <div class="footer">
+      <div style="display:flex; justify-content:space-between; align-items:center">
+        <span>Total</span>
+        <strong id="cart-total">R$ 0,00</strong>
       </div>
-      <div class="depoimento">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 2">
-        <p>"Batom de longa duração e cores sofisticadas. Recomendo muito!"</p>
-        <span>- Carla M.</span>
-      </div>
-      <div class="depoimento">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Cliente 3">
-        <p>"Produtos de luxo que realmente fazem diferença na pele."</p>
-        <span>- Ana P.</span>
-      </div>
+      <button class="btn primary" onclick="checkout()">Finalizar compra</button>
     </div>
-  </section>
+  </aside>
 
-  <!-- Contato -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Email: contato@elancosmeticos.com</p>
-    <p>Telefone: (11) 97777-7777</p>
-    <p>Endereço: Rua da Elegância, 1000 - São Paulo/SP</p>
-  </section>
+  <div id="toast" class="toast">Adicionado ao carrinho</div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Élan Cosméticos - Todos os direitos reservados</p>
-    <div class="redes">
-      <a href="#">Instagram</a> | 
-      <a href="#">Facebook</a> | 
-      <a href="#">Twitter</a>
-    </div>
+  <footer class="container">
+    © <span id="year"></span> Bella Beauty — Loja de Cosméticos
   </footer>
 
-</body>
-</html>
+  <script>
+    const PRODUCTS = [
+      {id:1,name:"Batom Matte", category:"maquiagem", price:29.9, sale:19.9, rating:4.8, tag:"Destaque", cover:"violet"},
+      {id:2,name:"Base Líquida", category:"maquiagem", price:49.9, sale:null, rating:4.9, tag:"Novo", cover:"pink"},
+      {id:3,name:"Blush Compacto", category:"maquiagem", price:24.9, sale:19.9, rating:4.7, tag:"Oferta", cover:"orange"},
+      {id:4,name:"Máscara de Cílios", category:"maquiagem", price:39.9, sale:null, rating:4.8, tag:"Top", cover:"red"},
+      {id:5,name:"Iluminador Facial", category:"maquiagem", price:34.9, sale:null, rating:4.7, tag:"Novo", cover:"yellow"},
+      {id:6,name:"Paleta de Sombras", category:"maquiagem", price:79.9, sale:59.9, rating:4.9, tag:"Promo", cover:"purple"},
+      {id:7,name:"Loção Hidratante", category:"pele", price:59.9, sale:null, rating:4.6, tag:"Novo", cover:"green"},
+      {id:8,name:"Esfoliante Facial", category:"pele", price:45.9, sale:35.9, rating:4.5, tag:"Top", cover:"teal"},
+      {id:9,name:"Pincel de Maquiagem", category:"acessorio", price:19.9, sale:null, rating:4.4, tag:"Acessório", cover:"amber"},
+      {id:10,name:"Necessaire", category:"acessorio", price:49.9, sale:39.9, rating:4.7, tag:"Novo", cover:"slate"}
+    ];
+
+    const $ = (q, el=document) => el.querySelector(q);
+    const $$ = (q,
+
+
