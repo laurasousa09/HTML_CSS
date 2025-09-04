@@ -1,0 +1,140 @@
+p {
+    color: blue;
+}
+
+#titulo-principal {
+background-color: yellow;
+color: black;
+text-align: center;
+padding: 10px;
+}
+
+.h2 {
+    color: green;
+}
+
+.li{
+    color: red;
+}
+
+#div1 {
+background-color: blueviolet;
+padding: 15px;
+margin-bottom: 10px;
+}
+
+#div2 {
+    background-color: aqua;
+    padding: 15px;
+}
+
+.agrupamento p, h2, h3 {
+    color: purple;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#p {
+    color: rgb(255, 145, 0);
+    text-align: center;
+}
+
+#link-google {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#link-youtube {
+ color: black;
+ text-decoration: none;
+ font-weight: bold;
+}
+
+.p {
+    font-weight: bold;
+    color: black;
+}
+
+img {
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+div p{
+    color: coral;
+}
+
+.paragrafo1 {
+    color: brown;
+} 
+
+.paragrafo2 {
+    color: blueviolet;
+}
+
+#h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.paragrafo3 {
+    color: burlywood;
+    font-weight: bold;
+}
+
+.paragrafo4 {
+    color: rgb(90, 55, 9);
+    font-style: italic;
+}
+
+.paragrafo5 {
+    color: rgb(148, 84, 0);
+    text-decoration:underline ;
+}
+
+div h3 {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:blue;
+}
+
+#div3 {
+    background-color: red;
+    color: white;
+    width: 100px;
+}
+
+#div4 {
+    background-color: green;
+    color: white;
+width: 100px;
+}
+
+#div5 {
+    background-color: blue;
+    color: white;
+    width: 100px;
+}
+
+.destaque {
+    color: red;
+    font-weight: bold;
+}
+
+#div6 {
+    background-color: blueviolet;
+    border-radius: 15px;
+    margin: 15px;
+    width: 300px;
+    color: white;
+}
+
+.href {
+    text-decoration:underline ;
+}
+
+h1, p, a {
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
