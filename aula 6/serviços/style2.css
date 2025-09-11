@@ -1,11 +1,9 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -13,7 +11,6 @@ body {
   background: #111;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -21,7 +18,6 @@ body {
   padding: 20px;
 }
 
-/* Cabeçalho */
 header {
   background: #111;
   padding: 20px 0;
@@ -58,7 +54,6 @@ header > .container {
   color: #d4af37;
 }
 
-/* Hero */
 .hero {
   background: linear-gradient(135deg, #111, #222);
   color: #f5f5f5;
@@ -89,7 +84,6 @@ header > .container {
   background: #b89628;
 }
 
-/* Serviços */
 .servicos {
   padding: 60px 0;
   text-align: center;
@@ -130,7 +124,6 @@ header > .container {
   color: #ccc;
 }
 
-/* Portfólio */
 .portfolio {
   background: #222;
   padding: 60px 0;
@@ -147,7 +140,6 @@ header > .container {
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Contato */
 .contato {
   padding: 60px 0;
   background: #111;
@@ -196,7 +188,6 @@ header > .container {
   background: #b89628;
 }
 
-/* Rodapé */
 footer {
   background: #000;
   color: #aaa;
@@ -204,7 +195,6 @@ footer {
   padding: 20px 0;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .links-navegacao {
     flex-direction: column;
