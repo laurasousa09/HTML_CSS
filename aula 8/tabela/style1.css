@@ -1,0 +1,157 @@
+.tabela1 {
+    border: solid black;
+    text-align: center;
+}
+
+.tabela2 th{
+ background-color: grey;
+ color: white;
+}
+
+.tabela2{
+    border: solid black;
+    text-align: center;
+}
+
+.tabela3{
+    color: blue;
+    text-align: center;
+     border: solid black;
+}
+
+.tabela3 th{
+ color: black;
+}
+
+.tabela4 {
+ border: solid black;
+ text-align: center;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.tabela5 th {
+    font-size: medium;
+}
+
+.tabela5 {
+    font-size: small;
+    border: solid black;
+}
+
+.tabela6 td{
+    background-color: #f2f2f2 ;
+}
+
+.tabela6 {
+    border: solid black;
+}
+
+.tabela7 {
+    border: solid black;
+    text-align: center;
+}
+
+.tabela8{
+    border: solid black 20px;
+}
+
+.tabela9{
+    border: solid black;
+}
+
+.tabela9 th{
+    background-color: red;
+}
+
+.tabela10{
+    border: solid black;
+}
+
+.tabela10 th{
+ padding: 15px;
+}
+
+.tabela11{
+    border: solid black;
+}
+
+.fruta{
+    font-style: italic;
+}
+
+.tabela12 td {
+    font-weight: bold;
+     text-align: center;
+}
+
+.tabela13{
+     border: solid black;
+}
+
+.linha{
+    background-color: blueviolet;
+    color: white;
+}
+
+.tabela14{
+    color: green;
+    border: solid black;
+}
+
+.tabela14 th{
+    color: black;
+}
+
+.tabela15{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+     border: solid black;
+}
+
+.linha2{
+    background-color: aquamarine;
+}
+
+.tabela16{
+     border: solid black;
+}
+
+.tabela17 th{
+background-color: black;
+color: white;
+}
+
+.tabela17{
+   border: solid black; 
+}
+
+.tabela18{
+     text-transform: uppercase; 
+     border: solid black; 
+}
+
+.tabela19{
+ border: solid black;
+}
+
+.tabela19 th{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+
+ .tabela20 th{
+    background-color: #4CAF50; 
+      color: white;
+ }
+
+  .tabela20 td{
+      color:gray;
+      font-weight: bold;
+      background-color: antiquewhite;
+  }
+
+ .tabela20{
+    border: solid black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+ } 
