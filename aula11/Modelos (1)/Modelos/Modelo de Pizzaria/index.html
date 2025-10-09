@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<title>Modelo W3.CSS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+body, html {height: 100%;}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif;}
+.menu {display: none;}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(Imagens/pizza-background-klnh06z5jqo6guyf.jpg);
+  min-height: 90%;
+}
+
+.w3-bar {
+  background-color: #8B0000 !important; 
+}
+
+.tablink {
+  background-color: #FF7F7F; 
+  color: white;
+}
+.tablink.w3-red {
+  background-color: #B22222 !important; 
+}
+
+/* Seções */
+#w3-container.w3-black {
+  background-color: #F5F5DC !important; 
+}
+
+#w3-container.w3-red {
+  background-color: #FF6347 !important; 
+  color: white;
+}
+
+#w3-container.w3-orange {
+  background-color: #FF7F7F !important;
+  color: white;
+}
+
+#w3-container.w3-light-grey {
+  background-color: #F0F0F0 !important;
+  color: #333;
+}
+
+#w3-container.w3-white {
+  background-color: #FFF8DC !important; 
+}
+
+.w3-blue-grey {
+  background-color: #DCDCDC !important; 
+}
+
+footer.w3-black {
+  background-color: #8B0000 !important;
+  color: white;
+}
+
+.w3-button {
+  background-color: #FF7F7F !important; 
+  color: white !important;
+}
+.w3-button:hover {
+  background-color: #B22222 !important;
+}
+</style>
+</head>
+<body>
+
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">INÍCIO</a>
+    <a href="#menu" class="w3-bar-item w3-button">CARDÁPIO</a>
+    <a href="#about" class="w3-bar-item w3-button">SOBRE</a>
+    <a href="#promocoes" class="w3-bar-item w3-button">PROMOÇÕES</a>
+    <a href="#galeria" class="w3-bar-item w3-button">GALERIA</a>
+    <a href="#myMap" class="w3-bar-item w3-button">CONTATO</a>
+  </div>
+</div>
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-padding">
+    <span class="w3-tag w3-xlarge">Aberto das 10h às 24h</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">Pizza<br>de Massa Fina</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>Pizza<br>de Massa Fina</b></span>
+    <p><a href="#menu" class="w3-button w3-xxlarge">Ver o cardápio</a></p>
+  </div>
+</header>
+
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">O CARDÁPIO</h1>
+
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+        <div class="w3-col s2 tablink w3-padding-large w3-hover-red">Pizzas</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Massas');">
+        <div class="w3-col s2 tablink w3-padding-large w3-hover-red">Massas</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Sobremesas');">
+        <div class="w3-col s2 tablink w3-padding-large w3-hover-red">Sobremesas</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Bebidas');">
+        <div class="w3-col s2 tablink w3-padding-large w3-hover-red">Bebidas</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Entradas');">
+        <div class="w3-col s2 tablink w3-padding-large w3-hover-red">Entradas</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Combos');">
+        <div class="w3-col s2 tablink w3-padding-large w3-hover-red">Combos</div>
+      </a>
+    </div>
+
+    <!-- Pizzas -->
+    <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$12,50</span></h1>
+      <p class="w3-text-grey">Tomates frescos, mussarela fresca e manjericão</p><hr>
+      <h1><b>Calabresa</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$14,00</span></h1>
+      <p class="w3-text-grey">Calabresa fatiada, cebola e orégano</p><hr>
+      <h1><b>Quatro Queijos</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$16,00</span></h1>
+      <p class="w3-text-grey">Mussarela, parmesão, provolone e gorgonzola</p><hr>
+      <h1><b>Frango com Catupiry</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$15,50</span></h1>
+      <p class="w3-text-grey">Frango desfiado e catupiry cremoso</p><hr>
+      <h1><b>Portuguesa</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$17,00</span></h1>
+      <p class="w3-text-grey">Presunto, ovos, cebola e azeitonas</p><hr>
+      <h1><b>Napolitana</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$16,50</span></h1>
+      <p class="w3-text-grey">Tomate, alho, azeite e manjericão</p>
+    </div>
+
+    <!-- Massas -->
+    <div id="Massas" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Lasanha à Bolonhesa</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$18,50</span></h1>
+      <p class="w3-text-grey">Molho bolonhesa, mussarela e parmesão gratinado</p><hr>
+      <h1><b>Espaguete ao Pesto</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$17,00</span></h1>
+      <p class="w3-text-grey">Molho de manjericão, azeite e nozes</p><hr>
+      <h1><b>Ravioli de Ricota</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$19,00</span></h1>
+      <p class="w3-text-grey">Recheado com ricota e espinafre, com molho branco</p><hr>
+      <h1><b>Fettuccine Alfredo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$18,00</span></h1>
+      <p class="w3-text-grey">Molho cremoso de parmesão e manteiga</p><hr>
+      <h1><b>Penne à Arrabbiata</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$17,50</span></h1>
+      <p class="w3-text-grey">Molho picante de tomate e alho</p><hr>
+      <h1><b>Lasanha de Frango com Catupiry</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$19,50</span></h1>
+      <p class="w3-text-grey">Frango desfiado com molho branco e catupiry</p>
+    </div>
+
+    <!-- Sobremesas -->
+    <div id="Sobremesas" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Tiramisu</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$10,00</span></h1>
+      <p class="w3-text-grey">Camadas de biscoito, café e creme mascarpone</p><hr>
+      <h1><b>Panna Cotta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$9,50</span></h1>
+      <p class="w3-text-grey">Sobremesa italiana com calda de frutas vermelhas</p><hr>
+      <h1><b>Pizza Doce de Nutella</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$14,00</span></h1>
+      <p class="w3-text-grey">Cobertura de Nutella e morangos frescos</p><hr>
+      <h1><b>Gelato Italiano</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$8,50</span></h1>
+      <p class="w3-text-grey">Sorvete artesanal em diversos sabores</p><hr>
+      <h1><b>Brownie com Sorvete</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$12,00</span></h1>
+      <p class="w3-text-grey">Brownie quente com sorvete de creme</p><hr>
+      <h1><b>Crepe de Chocolate</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$11,00</span></h1>
+      <p class="w3-text-grey">Crepe recheado com chocolate e frutas</p>
+    </div>
+
+    <!-- Bebidas -->
+    <div id="Bebidas" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Suco Natural</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$6,00</span></h1>
+      <p class="w3-text-grey">Laranja, limão ou abacaxi</p><hr>
+      <h1><b>Refrigerante Lata</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$5,50</span></h1>
+      <p class="w3-text-grey">Coca-Cola, Guaraná, Sprite</p><hr>
+      <h1><b>Cerveja Artesanal</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$12,00</span></h1>
+      <p class="w3-text-grey">Cerveja local com sabor encorpado</p><hr>
+      <h1><b>Vinho Tinto</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$20,00</span></h1>
+      <p class="w3-text-grey">Taça de vinho selecionado</p><hr>
+      <h1><b>Espumante</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$25,00</span></h1>
+      <p class="w3-text-grey">Brut italiano, ideal para comemorações</p><hr>
+      <h1><b>Café Expresso</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$7,00</span></h1>
+      <p class="w3-text-grey">Café forte e encorpado, servido na xícara</p>
+    </div>
+
+    <!-- Entradas -->
+    <div id="Entradas" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$8,00</span></h1>
+      <p class="w3-text-grey">Pão italiano com tomate, azeite e manjericão</p><hr>
+      <h1><b>Focaccia</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$7,50</span></h1>
+      <p class="w3-text-grey">Massa de pão com alecrim e sal grosso</p><hr>
+      <h1><b>Provolone à Milanesa</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$11,00</span></h1>
+      <p class="w3-text-grey">Fatias de queijo empanadas e crocantes</p><hr>
+      <h1><b>Salada Caprese</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$10,00</span></h1>
+      <p class="w3-text-grey">Tomate, mussarela de búfala e manjericão</p><hr>
+      <h1><b>Camarão ao Alho e Óleo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$18,00</span></h1>
+      <p class="w3-text-grey">Camarões salteados com alho e azeite</p>
+    </div>
+
+    <!-- Combos -->
+    <div id="Combos" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Combo Individual</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$25,00</span></h1>
+      <p class="w3-text-grey">1 pizza pequena + 1 refrigerante lata</p><hr>
+      <h1><b>Combo Casal</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$45,00</span></h1>
+      <p class="w3-text-grey">1 pizza média + 2 bebidas</p><hr>
+      <h1><b>Combo Família</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$79,90</span></h1>
+      <p class="w3-text-grey">2 pizzas grandes + refrigerante 2L</p><hr>
+      <h1><b>Combo Festa</b> <span class="w3-right w3-tag w3-dark-grey w3-round">R$120,00</span></h1>
+      <p class="w3-text-grey">3 pizzas grandes + 2 refrigerantes 2L + sobremesa</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- resto do código permanece igual -->
+
+<script>
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
+
