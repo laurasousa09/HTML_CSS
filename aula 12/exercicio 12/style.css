@@ -9,7 +9,6 @@ header {
   background: #222;
   color: #fff;
   padding: 20px;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -24,6 +23,9 @@ header nav a:hover {
 }
 
 main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -34,10 +36,6 @@ section, aside {
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-section h2 {
-  border-bottom: 2px solid #0077cc;
-  padding-bottom: 5px;
-}
 
 footer {
   background: #222;
