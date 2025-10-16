@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 40px;
+}
+
+header {
+  text-align: center;
+}
+
+section {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #cca300;
+  border-radius: 6px;
+}
+
+time {
+  font-weight: bold;
+  color: #cca300;
+}

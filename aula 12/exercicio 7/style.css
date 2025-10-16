@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+article {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+article header {
+    background-color: #b60055;
+    color: white;
+    padding: 10px;
+}
+
+section {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: white;
+}

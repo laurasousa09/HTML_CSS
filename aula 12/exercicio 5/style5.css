@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color:darkgrey;
+}
+
+aside {
+    float: right;
+    width: 30%;
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+p {
+    width: 65%;
+    text-align: justify;
+}
