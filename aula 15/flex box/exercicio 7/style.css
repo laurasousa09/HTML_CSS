@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.box {
+  background: gold;
+  padding: 15px;
+  border-radius: 5px;
+}

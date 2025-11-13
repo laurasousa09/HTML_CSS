@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f7f7f7;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item {
+  flex: 1 1 calc(25% - 10px);
+  height: 150px;
+  background: #4caf50;
+  border-radius: 8px;
+}
+
+@media (max-width: 800px) {
+  .item {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 500px) {
+  .item {
+    flex: 1 1 100%;
+  }
+}

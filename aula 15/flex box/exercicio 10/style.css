@@ -1,0 +1,8 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: #222;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
